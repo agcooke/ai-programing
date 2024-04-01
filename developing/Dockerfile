@@ -10,4 +10,4 @@ RUN pip install poetry && \
 
 COPY ./server /app
 
-CMD ["poetry", "run", "uvicorn", "fastapi_server.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["tail", "-f", "/dev/null"]

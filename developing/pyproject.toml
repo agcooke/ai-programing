@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "fastapi-server"
+version = "0.1.0"
+description = ""
+authors = ["Adrian Cooke <105147+agcooke@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
