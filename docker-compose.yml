@@ -13,3 +13,12 @@ services:
       dockerfile: developing/Dockerfile
     volumes:
       - ".:/app"
+  ollama:
+    image: ollama/ollama
+    ports:
+      - '11434:11434'
+    volumes:
+      - 'ollama:/root/.ollama'
+    restart: always
+volumes:
+  ollama:

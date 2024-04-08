@@ -1,7 +1,7 @@
 FROM python:3.12
 
 WORKDIR /app
-
+ENV PYTHONPATH=/app
 COPY ./server/pyproject.toml ./server/poetry.lock* /app/
 
 RUN pip install poetry && \
