@@ -9,6 +9,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.12"
 requests = "^2.31.0"
+scikit-learn = "^1.4.2"
 
 
 [build-system]
