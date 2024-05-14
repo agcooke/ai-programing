@@ -14,5 +14,8 @@ pull_llava:
 understand_image:
 	PYTHONPATH=. python developing/understand_image/understand_image.py $(filter-out $@,$(MAKECMDGOALS))
 
+personal_bot:
+	PYTHONPATH=. python developing/personal_bot/personal_bot.py images --person $(filter-out $@,$(MAKECMDGOALS))
+
 %:
 	@true

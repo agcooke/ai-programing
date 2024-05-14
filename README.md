@@ -30,6 +30,12 @@ Then run:
 make understand_image images/IMG_8965.JPG
 ```
 
+# Run you own personal bot:
+
+```shell
+make personal_bot Adrian
+```
+
 # Advanced usage for Mac users:
 
 1. install [brew](https://brew.sh/)
@@ -40,4 +46,5 @@ make understand_image images/IMG_8965.JPG
 docker compose exec developing  /bin/bash
 python developing/pull_llava/main.py --host host.docker.internal
 python developing/understand_image/understand_image.py images/IMG_8965.JPG --host host.docker.internal
+python developing/personal_bot/personal_bot.py images --person Adrian --host host.docker.internal
 ```
