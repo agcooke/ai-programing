@@ -1,6 +1,14 @@
 version: "3.8"
 
 services:
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - hugging_face:/root/.cache/huggingface
   developing:
     build:
       context: .
@@ -9,3 +17,6 @@ services:
       - ".:/app"
     ports:
       - '7860:7860'
+
+volumes:
+  hugging_face:
