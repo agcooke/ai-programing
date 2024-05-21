@@ -8,7 +8,32 @@ import json
 
 def generate_images(host, description, style, output_filename):
     url = f"http://{host}:8080/generate/"  # Construct the URL based on the host
-    raise Exception("Needs to be implemented.")
+
+    # Prepare the request data
+    data = {"description": description, "style": style}
+    headers = {"Content-Type": "application/json"}
+
+    try:
+        response = requests.post(url, data=json.dumps(data), headers=headers)
+        response.raise_for_status()  # Raise an exception for bad status codes
+
+        result = response.json()
+        images = result.get("images", [])
+
+        if not images:
+            raise Exception("No images were generated.")
+
+        # Process and save the images
+        for i, image_data in enumerate(images[:2]):  # Limit to 2 images
+            image = Image.open(BytesIO(base64.b64decode(image_data)))
+            filename = f"{output_filename}-{i + 1}.png"
+            image.save(filename)
+            print(f"Image saved as {filename}")
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error making request: {e}")
+    except Exception as e:
+        print(f"Error processing images: {e}")
 
 
 if __name__ == "__main__":
