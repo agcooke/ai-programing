@@ -63,3 +63,10 @@ Then:
 docker compose exec developing  /bin/bash
 python developing/generate_image/main.py -d "A big wave" -s "close up photo taken with a long zoom lens." -o big-wave -H host.docker.internal
 ```
+Response:
+```json
+{
+  "images": ["base64 encoded image1","base64 encoded image 2"]
+}
+
+```
