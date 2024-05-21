@@ -4,8 +4,8 @@ import logging
 from io import BytesIO
 
 import torch
-from diffusers import AutoPipelineForText2Image, StableDiffusionPipeline
-from fastapi import FastAPI, HTTPException
+from diffusers import AutoPipelineForText2Image, StableDiffusionXLPipeline
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 logging.basicConfig(level=logging.INFO)
@@ -22,7 +22,7 @@ app = FastAPI()
 
 async def initialize_pipeline():
     logger.info("Downloading Stable Diffusion model...")
-    localPipe = StableDiffusionPipeline.from_pretrained("stabilityai/sdxl-turbo")
+    localPipe = StableDiffusionXLPipeline.from_pretrained("stabilityai/sdxl-turbo")
 
     device = "cpu"
     if torch.cuda.is_available():
