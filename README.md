@@ -61,4 +61,5 @@ Run no your host machine:
 Then:
 ```shell
 docker compose exec developing  /bin/bash
+python developing/generate_image/main.py -d "A big wave" -s "close up photo taken with a long zoom lens." -o big-wave -H host.docker.internal
 ```
