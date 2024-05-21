@@ -48,3 +48,17 @@ python developing/pull_llava/main.py --host host.docker.internal
 python developing/understand_image/understand_image.py images/IMG_8965.JPG --host host.docker.internal
 python developing/personal_bot/personal_bot.py images --person Adrian --host host.docker.internal
 ```
+
+# Image generation
+
+Does not work in docker:
+
+Run no your host machine:
+```shell
+ PYTHONPATH=. poetry run uvicorn fastapi_server.main:app --host 0.0.0.0 --port 8080 --reload
+
+```
+Then:
+```shell
+docker compose exec developing  /bin/bash
+```
